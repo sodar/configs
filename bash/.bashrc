@@ -11,6 +11,8 @@ export EDITOR
 
 export PATH=$PATH:$HOME/bin
 
+umask 0077
+
 
 # Aliases
 alias ls='ls --color=auto'

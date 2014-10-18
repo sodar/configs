@@ -98,9 +98,3 @@ function Git_GetPrompt() {
 USER_AND_HOST="\[$bldblu\]\u\[$bldwht\]@\[$bldgrn\]\h"
 CURR_DIR=" \[$bldwht\][\w]"
 export PS1="${USER_AND_HOST}\$(Git_GetPrompt)${CURR_DIR}\n\[$bldwht\]$ \[$txtrst\]"
-
-# LOCAL
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-

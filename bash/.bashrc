@@ -11,8 +11,6 @@ export EDITOR
 
 export PATH=$PATH:$HOME/bin
 
-umask 0077
-
 
 # Aliases
 alias ls='ls --color=auto'
@@ -100,4 +98,9 @@ function Git_GetPrompt() {
 USER_AND_HOST="\[$bldblu\]\u\[$bldwht\]@\[$bldgrn\]\h"
 CURR_DIR=" \[$bldwht\][\w]"
 export PS1="${USER_AND_HOST}\$(Git_GetPrompt)${CURR_DIR}\n\[$bldwht\]$ \[$txtrst\]"
+
+# LOCAL
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 

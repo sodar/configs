@@ -10,3 +10,5 @@
 	st = status
 	br = branch
 	co = checkout
+    rb = rebase
+    lgr = log --graph --oneline --all

@@ -12,3 +12,4 @@
 	co = checkout
     rb = rebase
     lgr = log --graph --oneline --all
+    df = difftool

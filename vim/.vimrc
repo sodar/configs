@@ -6,8 +6,8 @@
 let mapleader = "," " leader key
 
 set number "show line numbers
-highlight ColorColumn ctermbg=1
-set colorcolumn=100
+highlight ColorColumn ctermbg=DarkGray
+set colorcolumn=80
 syntax on
 
 set splitright
@@ -33,6 +33,11 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+noremap <C-Left> <C-w>h
+noremap <C-Down> <C-w>j
+noremap <C-Up> <C-w>k
+noremap <C-Right> <C-w>l
+
 
 "
 " vim-pathogen
@@ -52,4 +57,14 @@ endif
 "
 " cd ~/.vim/bundle && git clone https://github.com/plasticboy/vim-markdown.git
 let g:vim_markdown_folding_disabled=1
+
+
+"
+" NERDTree
+"
+" cd ~/.vim/bundle
+" git clone https://github.com/scrooloose/nerdtree.git
+"
+noremap <C-t> :NERDTreeToggle<CR>
+inoremap <C-t> :NERDTreeToggle<CR>
 

@@ -93,8 +93,11 @@ function Git_GetPrompt() {
   fi
 }
 
+# RVM
+source $HOME/.rvm/scripts/rvm
 
 # Prompt
 USER_AND_HOST="\[$bldblu\]\u\[$bldwht\]@\[$bldgrn\]\h"
 CURR_DIR=" \[$bldwht\][\w]"
 export PS1="${USER_AND_HOST}\$(Git_GetPrompt)${CURR_DIR}\n\[$bldwht\]$ \[$txtrst\]"
+

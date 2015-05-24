@@ -94,7 +94,7 @@ function Git_GetPrompt() {
 }
 
 # RVM
-source $HOME/.rvm/scripts/rvm
+#source $HOME/.rvm/scripts/rvm
 
 # Prompt
 USER_AND_HOST="\[$bldblu\]\u\[$bldwht\]@\[$bldgrn\]\h"

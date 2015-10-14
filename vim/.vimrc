@@ -7,11 +7,18 @@ let mapleader = "," " leader key
 
 set number "show line numbers
 highlight ColorColumn ctermbg=DarkGray
-set colorcolumn=80
+set colorcolumn=99
 syntax on
 
 set splitright
 set splitbelow
+set nowrap
+set wildmenu  " shows little menu, when tabbing on :e .vim<TAB>
+set lazyredraw  " vim will redraw the window, only when needed
+set showmatch  " highlight matching [{()}]
+
+set cursorline  " highlights current line
+hi CursorLine cterm=NONE ctermbg=DarkGray
 
 " Indentation
 set expandtab
@@ -38,6 +45,8 @@ noremap <C-Down> <C-w>j
 noremap <C-Up> <C-w>k
 noremap <C-Right> <C-w>l
 
+nnoremap <C-c> :!./make.sh<CR>
+
 
 "
 " vim-pathogen
@@ -57,6 +66,10 @@ endif
 "
 " cd ~/.vim/bundle && git clone https://github.com/plasticboy/vim-markdown.git
 let g:vim_markdown_folding_disabled=1
+augroup markdown
+  au!
+  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
 
 
 "

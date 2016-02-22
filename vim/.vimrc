@@ -7,7 +7,7 @@ let mapleader = "," " leader key
 
 set number "show line numbers
 highlight ColorColumn ctermbg=DarkGray
-set colorcolumn=99
+set colorcolumn=81
 syntax on
 
 set splitright

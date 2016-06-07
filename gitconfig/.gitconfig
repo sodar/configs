@@ -11,7 +11,6 @@
 	br = branch
 	co = checkout
   rb = rebase
-  #lgr = log --graph --oneline --all --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
   lgr = log --graph --oneline --all --decorate
   df = difftool
 

@@ -94,10 +94,19 @@ function Git_GetPrompt() {
 }
 
 # RVM
-#source $HOME/.rvm/scripts/rvm
+[ -f $HOME/.rvm/scripts/rvm ] && source $HOME/.rvm/scripts/rvm
+
+# pyenv
+if [ -d $HOME/.pyenv ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 # Prompt
 USER_AND_HOST="\[$bldblu\]\u\[$bldwht\]@\[$bldgrn\]\h"
 CURR_DIR=" \[$bldwht\][\w]"
 export PS1="${USER_AND_HOST}\$(Git_GetPrompt)${CURR_DIR}\n\[$bldwht\]$ \[$txtrst\]"
 
+# Aliases
+alias batterystate="upower -i /org/freedesktop/UPower/devices/battery_BAT0"

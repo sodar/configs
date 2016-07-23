@@ -6,8 +6,8 @@
 let mapleader = "," " leader key
 
 set number "show line numbers
-highlight ColorColumn ctermbg=DarkGray
-set colorcolumn=81
+highlight OverLength ctermbg=red ctermfg=none guibg=#592929
+match OverLength /\%91v.\+/
 syntax on
 
 set splitright
@@ -16,9 +16,6 @@ set nowrap
 set wildmenu  " shows little menu, when tabbing on :e .vim<TAB>
 set lazyredraw  " vim will redraw the window, only when needed
 set showmatch  " highlight matching [{()}]
-
-set cursorline  " highlights current line
-hi CursorLine cterm=NONE ctermbg=DarkGray
 
 " Indentation
 set expandtab

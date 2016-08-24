@@ -6,7 +6,7 @@
 let mapleader = "," " leader key
 
 set number "show line numbers
-highlight OverLength ctermbg=red ctermfg=none guibg=#592929
+highlight OverLength ctermbg=DarkGray ctermfg=none guibg=#592929
 match OverLength /\%91v.\+/
 syntax on
 
@@ -42,8 +42,6 @@ noremap <C-Down> <C-w>j
 noremap <C-Up> <C-w>k
 noremap <C-Right> <C-w>l
 
-nnoremap <C-c> :!./make.sh<CR>
-
 
 "
 " vim-pathogen
@@ -78,3 +76,12 @@ augroup END
 noremap <C-t> :NERDTreeToggle<CR>
 inoremap <C-t> :NERDTreeToggle<CR>
 
+"
+" scratch.vim - Unobtrusive scratch window
+"
+" cd ~/.vim/bundle
+" git clone https://github.com/mtth/scratch.vim ./scratch
+"
+"let g:scratch_disable = 1
+let g:scratch_autohide = 1
+let g:scratch_persistence_file= ($HOME . "/.vim-scratch")

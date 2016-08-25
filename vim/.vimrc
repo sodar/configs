@@ -84,4 +84,16 @@ inoremap <C-t> :NERDTreeToggle<CR>
 "
 "let g:scratch_disable = 1
 let g:scratch_autohide = 1
-let g:scratch_persistence_file= ($HOME . "/.vim-scratch")
+let g:scratch_persistence_file="~/.vim-scratch"
+
+"
+" ctrlp.vim
+"
+" cd ~/.vim/bundle
+" git clone https://github.com/kien/ctrlp.vim.git ctrlp.vim
+" # set runtimepath
+" :helptags ~/.vim/bundle/ctrlp.vim/doc
+"
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'

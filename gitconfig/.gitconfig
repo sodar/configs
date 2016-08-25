@@ -1,6 +1,5 @@
 [user]
 	name = Dariusz Sosnowski
-	email = dar.sosnowski@gmail.com
 [core]
 	editor = vim
 [merge]
@@ -10,10 +9,9 @@
 	st = status
 	br = branch
 	co = checkout
-  rb = rebase
-  lgr = log --graph --oneline --all --decorate
-  df = difftool
-
+	rb = rebase
+	df = difftool
+	loggraph = log --graph --oneline --all --decorate
 [push]
 	default = simple
 [diff]

@@ -4,11 +4,16 @@
 "
 
 let mapleader = "," " leader key
+set nocompatible
 
 set number "show line numbers
 highlight OverLength ctermbg=DarkGray ctermfg=none guibg=#592929
 match OverLength /\%91v.\+/
 syntax on
+
+filetype on
+filetype indent on
+filetype plugin on
 
 set splitright
 set splitbelow
@@ -22,7 +27,7 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set autoindent
+set smartindent
 
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 autocmd FileType make setlocal noexpandtab shiftwidth=4 softtabstop=4

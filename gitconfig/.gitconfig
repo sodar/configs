@@ -2,15 +2,10 @@
 	name = Dariusz Sosnowski
 [core]
 	editor = vim
+	pager = less -x4
 [merge]
 	tool = vimdiff
 [alias]
-	ci = commit
-	st = status
-	br = branch
-	co = checkout
-	rb = rebase
-	df = difftool
 	lgr = log --graph --oneline --all --decorate
 [push]
 	default = simple

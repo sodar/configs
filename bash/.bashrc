@@ -39,7 +39,7 @@ txtrst='\e[0m'
 
 # For working with git
 function Git_IsInRepo() {
-  if git st &> /dev/null; then
+  if git 'status' &> /dev/null; then
     return 0
   else
     return 1
@@ -101,18 +101,6 @@ export PS1="${USER_AND_HOST}\$(Git_GetPrompt)${CURR_DIR}\n\[$bldwht\]$ \[$txtrst
 
 # Aliases
 alias batterystate="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
-
-# gpg-agent as ssh-agent
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-fi
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
-# Sync firefox profile on startup of the shell
-~/bin/firefox-sync &> /dev/null
-
 
 # External programs, PATH extensions
 #

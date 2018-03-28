@@ -24,14 +24,17 @@ set lazyredraw  " vim will redraw the window, only when needed
 set showmatch  " highlight matching [{()}]
 
 " Indentation
-set noexpandtab
-set tabstop=8
-set softtabstop=8
-set shiftwidth=8
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set autoindent
 
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType go setlocal noexpandtab shiftwidth=4 softtabstop=4
+autocmd FileType make setlocal noexpandtab shiftwidth=4 softtabstop=4
 autocmd FileType markdown setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
 
 " Highlight tabs as '>---', highlight trailing spaces
 set listchars=tab:>-,trail:-
@@ -39,10 +42,10 @@ set list
 highlight SpecialKey ctermfg=DarkGray
 
 " Key mappings
-nmap	<Leader>n	:tabn<CR>
-nmap	<Leader>p	:tabp<CR>
+nmap    <Leader>n   :tabn<CR>
+nmap    <Leader>p   :tabp<CR>
 
-map		<f9>		:make
+map     <f9>        :make
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -58,7 +61,7 @@ noremap <C-Right> <C-w>l
 " Promela syntax highlightinh
 "
 augroup filetypedetect
-	au BufNewFile,BufRead *.promela,*.prm	setf promela
+    au BufNewFile,BufRead *.promela,*.prm   setf promela
 augroup END
 
 
@@ -76,17 +79,6 @@ endif
 
 
 "
-" vim-markdown
-"
-" cd ~/.vim/bundle && git clone https://github.com/plasticboy/vim-markdown.git
-"let g:vim_markdown_folding_disabled=1
-"augroup markdown
-"  au!
-"  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-"augroup END
-
-
-"
 " NERDTree
 "
 " cd ~/.vim/bundle
@@ -94,16 +86,6 @@ endif
 "
 noremap <C-t> :NERDTreeToggle<CR>
 inoremap <C-t> :NERDTreeToggle<CR>
-
-"
-" scratch.vim - Unobtrusive scratch window
-"
-" cd ~/.vim/bundle
-" git clone https://github.com/mtth/scratch.vim ./scratch
-"
-"let g:scratch_disable = 1
-"let g:scratch_autohide = 1
-"let g:scratch_persistence_file="~/.vim-scratch"
 
 "
 " ctrlp.vim

@@ -9,7 +9,7 @@
 EDITOR=vim
 export EDITOR
 
-export PATH=$PATH:$HOME/bin
+export PATH="${PATH}:${HOME}/bin"
 
 
 # Aliases
@@ -37,7 +37,10 @@ bldwht='\e[1;37m'
 
 txtrst='\e[0m'
 
-# For working with git
+#
+# Simplistic Git prompt
+#
+
 function Git_IsInRepo() {
   if git 'status' &> /dev/null; then
     return 0
@@ -48,48 +51,19 @@ function Git_IsInRepo() {
 
 function Git_GetBranch() {
   if Git_IsInRepo; then
-   echo `git branch --all | awk '/^\* / { gsub("\* ", ""); print $0 }' 2> /dev/null`
-  fi
-}
-
-function Git_IsChanged() {
-  if Git_IsInRepo; then
-    # Command returns 0 if repository is not modified
-    if [[ $(git diff --shortstat 2> /dev/null | tail -n1) == "" ]]; then
-      return 1
-    else
-      return 0
-    fi
-  fi
-}
-
-function Git_UntrackedCount() {
-  if Git_IsInRepo; then
-    # Command returns 0 if there are any untracked files
-    expr `git status --porcelain | grep "^??" | wc -l`
-    return 0
-  else
-    echo "0"
-    return 1
+    echo `git branch --all | awk '/^\* / { gsub("\* ", ""); print $0 }' 2> /dev/null`
   fi
 }
 
 function Git_GetPrompt() {
   if Git_IsInRepo; then
-    B=" \001$bldwht\002("
-    E="\001$bldwht\002)"
+    local prefix=" \001$bldwht\002("
+    local suffix="\001$bldwht\002)"
 
-    branch=`Git_GetBranch`
-    prompt="\001$bldwht\002git:\001$bldylw\002$branch"
-    if Git_IsChanged; then
-      prompt="$prompt \001$bldred\002*"
-    fi
-    untracked_count=`Git_UntrackedCount`
-    if [ $untracked_count -gt 0 ]; then
-      prompt="$prompt \001$bldred\002U"
-    fi
+    local branch=`Git_GetBranch`
+    local prompt="\001$bldwht\002git:\001$bldylw\002$branch"
 
-    echo -e "${B}${prompt}${E}"
+    echo -e "${prefix}${prompt}${suffix}"
   fi
 }
 
@@ -99,12 +73,26 @@ USER_AND_HOST="\[$bldblu\]\u\[$bldwht\]@\[$bldgrn\]\h"
 CURR_DIR=" \[$bldwht\][\w]"
 export PS1="${USER_AND_HOST}\$(Git_GetPrompt)${CURR_DIR}\n\[$bldwht\]$ \[$txtrst\]"
 
+#
 # Aliases
+#
 alias batterystate="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 
+#
 # External programs, PATH extensions
 #
+
 # RVM
-[ -f $HOME/.rvm/scripts/rvm ] && source $HOME/.rvm/scripts/rvm
+[ -f "${HOME}/.rvm/scripts/rvm" ] && source "${HOME}/.rvm/scripts/rvm"
+
 # Rust
-[ -d $HOME/.cargo/bin ] && export PATH=${HOME}/.cargo/bin:${PATH}
+[ -d "${HOME}/.cargo/bin" ] && export PATH="${HOME}/.cargo/bin:${PATH}"
+
+# Go
+[ -d "${HOME}/dev/go" ] && export GOPATH="${HOME}/dev/go"
+
+# Terraform
+[ -d "/opt/terraform" ] && export PATH="${PATH}:/opt/terraform"
+
+# doctl
+[ -f "/usr/bin/doctl" ] && source <(doctl completion bash)

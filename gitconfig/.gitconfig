@@ -1,15 +1,21 @@
-[user]
-	name = Dariusz Sosnowski
+#
+#~/.gitconfig_local
+#[user]
+#   name =
+#   email =
+#
+[include]
+    path = ~/.gitconfig_local
 [core]
-	editor = vim
-	pager = less -x4
+    editor = vim
+    pager = less -x4
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [alias]
-	lgr = log --graph --oneline --all --decorate
+    lgr = log --graph --oneline --all --decorate
 [push]
-	default = simple
+    default = simple
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [difftool]
-	prompt = false
+    prompt = false

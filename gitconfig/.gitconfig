@@ -12,7 +12,7 @@
 [merge]
     tool = vimdiff
 [alias]
-    lgr = log --graph --oneline --all --decorate
+    lgr = log --graph --oneline --decorate
 [push]
     default = simple
 [diff]

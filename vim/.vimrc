@@ -4,7 +4,7 @@
 "
 
 let mapleader = "," " leader key
-set nocompatible
+"set nocompatible
 
 set number "show line numbers
 highlight OverLength ctermbg=DarkGray ctermfg=none guibg=#592929

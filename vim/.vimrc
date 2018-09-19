@@ -7,9 +7,13 @@ let mapleader = "," " leader key
 "set nocompatible
 
 set number "show line numbers
-highlight OverLength ctermbg=DarkGray ctermfg=none guibg=#592929
-match OverLength /\%91v.\+/
 syntax on
+
+" Highlight only when line exceeds 80 characters
+augroup vimrc_autocmds
+    autocmd BufEnter * highlight OverLength ctermbg=DarkRed ctermfg=none guibg=#592929
+    autocmd BufEnter * match OverLength /\%101v.\+/
+augroup END
 
 colorscheme ron
 

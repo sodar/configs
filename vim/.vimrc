@@ -102,3 +102,16 @@ inoremap <C-t> :NERDTreeToggle<CR>
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+"
+" vim-rust
+"
+" git clone --depth=1 https://github.com/rust-lang/rust.vim.git ~/.vim/bundle/rust.vim
+"
+
+"
+" vim-terraform
+"
+" cd ~/.vim/bundle
+" git clone https://github.com/hashivim/vim-terraform.git
+"

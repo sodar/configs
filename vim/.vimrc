@@ -34,10 +34,11 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 
-autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 autocmd FileType go setlocal noexpandtab shiftwidth=4 softtabstop=4
 autocmd FileType make setlocal noexpandtab shiftwidth=4 softtabstop=4
 autocmd FileType markdown setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType terraform setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
 
 " Highlight tabs as '>---', highlight trailing spaces

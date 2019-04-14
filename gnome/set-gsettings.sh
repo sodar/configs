@@ -9,3 +9,6 @@ if gsettings get "${G_COLOR}" "${G_NIGHT_TEMP}" &> /dev/null; then
 else
 	echo "${0}: consider installing Gnome with Night Light"
 fi
+
+# Alt-Tab should switch between apps on current workspace only.
+gsettings set org.gnome.shell.app-switcher current-workspace-only true

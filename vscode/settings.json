@@ -1,0 +1,13 @@
+{
+    "[c]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 8,
+        "editor.trimAutoWhitespace": true
+    },
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "files.insertFinalNewline": true,
+    "telemetry.enableTelemetry": false,
+    "workbench.startupEditor": "newUntitledFile"
+}

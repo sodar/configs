@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -euo pipefail
-
 function main() {
+    set -euo pipefail
+
     local ssh_env_path="${HOME}/.ssh-agent-thing"
 
     if [ -f "${ssh_env_path}" ]; then
@@ -11,6 +11,8 @@ function main() {
     else
         echo "No .ssh-agent-thing in '${ssh_env_path}'"
     fi
+
+    set +euo pipefail
 }
 
 main

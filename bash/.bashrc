@@ -14,7 +14,7 @@ export PATH="${PATH}:${HOME}/bin"
 
 # Aliases
 alias ls='ls --color=auto'
-alias start-ssh-agent="${HOME}/bin/start-ssh-agent.sh"
+alias start-ssh-agent="/bin/bash ${HOME}/bin/start-ssh-agent.sh"
 alias refresh-ssh-agent="source ${HOME}/bin/refresh-ssh-agent.sh"
 
 

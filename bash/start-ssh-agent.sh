@@ -32,11 +32,11 @@ function main() {
             echo "ssh-agent is running with pid ${SSH_AGENT_PID}, please use refresh-ssh-agent"
         else
             echo "Process pointed to by '${ssh_env_path}' is not a ssh-agent"
-            start_ssh_agent
+            start_ssh_agent "${ssh_env_path}"
         fi
     else
         echo "No .ssh-agent-thing in '${ssh_env_path}'"
-        start_ssh_agent
+        start_ssh_agent "${ssh_env_path}"
     fi
 }
 

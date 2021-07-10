@@ -1,0 +1,5 @@
+#!/bin/bash
+
+CONFIGS=(
+    10-home-bin-to-path.sh
+)

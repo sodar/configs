@@ -2,4 +2,5 @@
 
 CONFIGS=(
     10-home-bin-to-path.sh
+    11-aliases.sh
 )
